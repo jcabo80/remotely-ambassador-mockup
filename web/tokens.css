@@ -1,0 +1,265 @@
+/* Remotely brand tokens
+ * Source: assets/Remotely_Brand_Guidelines.pdf + Notion Design System
+ * Drop this stylesheet at the top of any Remotely webpage and you get fonts,
+ * colors, spacing, radii, gradients, and a few utility classes for free.
+ *
+ * Path note: relative URLs below assume this file lives next to ../assets/.
+ * If you copy tokens.css elsewhere, also copy ../assets/fonts/ alongside, or
+ * rewrite the @font-face urls.
+ */
+
+/* ---------- Roobert (display & headings) ---------- */
+@font-face {
+  font-family: "Roobert";
+  src: url("../assets/fonts/Roobert/Roobert-Heavy.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roobert";
+  src: url("../assets/fonts/Roobert/Roobert-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roobert";
+  src: url("../assets/fonts/Roobert/Roobert-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roobert";
+  src: url("../assets/fonts/Roobert/Roobert-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roobert";
+  src: url("../assets/fonts/Roobert/Roobert-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Inter (body & UI) — woff2 web subset ---------- */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/web/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/web/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/web/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/web/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  /* colors */
+  --r-purple: #5047E2;
+  --r-purple-deep: #3F38C9;
+  --r-pink: #E14989;
+  --r-lilac: #BE5EC8;
+  --r-dark: #14151F;
+  --r-body: #4A4A6A;
+  --r-muted: #7070A0;
+  --r-card: rgba(235, 235, 245, 0.75);
+  --r-card-soft: rgba(255, 255, 255, 0.65);
+  --r-border: rgba(80, 71, 226, 0.15);
+  --r-stripe-alt: rgba(235, 235, 245, 0.55);
+
+  /* gradients */
+  --r-bg-gradient: linear-gradient(145deg, #EDE8FF 0%, #F3E6F9 35%, #FDE8F1 65%, #FFF5FA 100%);
+  --r-accent-stripe: linear-gradient(90deg, #5047E2, #BE5EC8, #E14989);
+
+  /* radii */
+  --r-radius-tile: 4px;
+  --r-radius-card: 6px;
+  --r-radius-pill: 50px;
+
+  /* spacing (rem ~= mm * 0.236; comfortable web sizes) */
+  --r-space-tight: 0.5rem;     /* 2mm */
+  --r-space-sm: 0.75rem;       /* 3mm */
+  --r-space-card: 1.25rem;     /* 4-5mm */
+  --r-space-section: 2rem;     /* 6-8mm */
+  --r-space-page-top: 2.5rem;  /* 9mm */
+  --r-space-page-side: 4.5rem; /* 18mm */
+
+  /* typography */
+  --r-font-display: "Roobert", "Inter", system-ui, -apple-system, sans-serif;
+  --r-font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --r-size-display: 60px;
+  --r-size-h1: 32px;
+  --r-size-h2: 20px;
+  --r-size-h3: 16px;
+  --r-size-callout: 17px;
+  --r-size-body: 15px;
+  --r-size-eyebrow: 11px;
+  --r-size-pill: 14px;
+  --r-size-footer: 11px;
+
+  --r-leading-body: 1.65;
+  --r-tracking-eyebrow: 0.16em;
+}
+
+/* ---------- Base ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--r-font-body);
+  font-size: var(--r-size-body);
+  line-height: var(--r-leading-body);
+  color: var(--r-body);
+  background: var(--r-bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--r-font-display);
+  color: var(--r-dark);
+  margin: 0 0 var(--r-space-sm);
+  line-height: 1.15;
+}
+h1 { font-size: var(--r-size-h1); font-weight: 900; }
+h2 { font-size: var(--r-size-h2); font-weight: 700; }
+h3 { font-size: var(--r-size-h3); font-weight: 600; }
+
+a { color: var(--r-purple); text-decoration: none; }
+a:hover { color: var(--r-purple-deep); }
+
+p { margin: 0 0 var(--r-space-sm); }
+
+/* ---------- Utility classes ---------- */
+
+/* hero display headline */
+.r-display {
+  font-family: var(--r-font-display);
+  font-weight: 900;
+  font-size: var(--r-size-display);
+  line-height: 1.05;
+  color: var(--r-dark);
+  letter-spacing: -0.01em;
+}
+
+/* eyebrow label */
+.r-eyebrow {
+  font-family: var(--r-font-body);
+  font-weight: 600;
+  font-size: var(--r-size-eyebrow);
+  letter-spacing: var(--r-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--r-purple);
+}
+
+/* callout / intro lead */
+.r-callout {
+  font-family: var(--r-font-display);
+  font-weight: 500;
+  font-size: var(--r-size-callout);
+  color: var(--r-dark);
+  background: var(--r-card-soft);
+  border-left: 3px solid var(--r-pink);
+  border-radius: var(--r-radius-card);
+  padding: var(--r-space-card);
+}
+
+/* card with accent border */
+.r-card {
+  background: var(--r-card-soft);
+  border-radius: var(--r-radius-card);
+  border-left: 3px solid var(--r-purple);
+  padding: var(--r-space-card);
+}
+.r-card--pink  { border-left-color: var(--r-pink); }
+.r-card--lilac { border-left-color: var(--r-lilac); }
+
+/* pill / tag */
+.r-pill {
+  display: inline-block;
+  font-family: var(--r-font-body);
+  font-weight: 700;
+  font-size: var(--r-size-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: var(--r-radius-pill);
+  padding: 0.45rem 1rem;
+}
+
+/* solid CTA */
+.r-cta {
+  display: inline-block;
+  font-family: var(--r-font-body);
+  font-weight: 700;
+  font-size: var(--r-size-pill);
+  background: var(--r-purple);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-radius-pill);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.r-cta:hover { background: var(--r-purple-deep); color: #fff; }
+.r-cta--dark { background: var(--r-dark); }
+.r-cta--dark:hover { background: #000; }
+
+/* gradient section divider */
+.r-divider {
+  width: 150px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--r-accent-stripe);
+  border: 0;
+  margin: var(--r-space-section) 0;
+}
+
+/* stripe table rows */
+.r-stripe { display: grid; row-gap: 0; }
+.r-stripe > .r-row {
+  padding: var(--r-space-sm) var(--r-space-card);
+  border-radius: var(--r-radius-card);
+}
+.r-stripe > .r-row:nth-child(even) {
+  background: var(--r-stripe-alt);
+}
+
+/* page shell */
+.r-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: var(--r-space-page-top) var(--r-space-page-side);
+}
+
+/* footer caption */
+.r-footer {
+  font-size: var(--r-size-footer);
+  color: var(--r-muted);
+}
